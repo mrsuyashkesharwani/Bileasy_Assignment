@@ -114,8 +114,3 @@ The `auth-service` was observed sending `Authorization` headers downstream, pote
 - Deleted pods were recreated automatically by ReplicaSets.
 - No unauthorized access or policy violations occurred during failure simulation.
 
----
-
-## ✅ Final Note
-
-This project showcases a secure, observable, and resilient Kubernetes setup using Minikube, suitable for DevSecOps simulations and training.
