@@ -1,0 +1,22 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: detect-authorization-logs
+spec:
+  validationFailureAction: audit
+  rules:
+    - name: block-authorization-header-logging
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      validate:
+        message: "Logging of Authorization headers is not allowed"
+        pattern:
+          spec:
+            containers:
+              - name: "*"
+                args:
+                  - "!*Authorization*"
+

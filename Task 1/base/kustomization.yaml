@@ -1,0 +1,5 @@
+resources:
+  - gateway
+  - auth-service
+  - data-service
+
